@@ -1,0 +1,663 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    overflow: scroll;
+}
+nav{
+    box-shadow: 5px 5px 8px rgba(26, 185, 61, 0.8);
+    height: 5rem;
+    font-size:1rem ;
+}
+#logo{
+    height: 4rem;
+}
+.container-fluid{
+    margin-left: 7rem;
+    justify-content: space-between;
+}
+.heading{
+    margin-top:4rem;
+    color: black;
+    font-size:3rem;
+    font-weight: bolder;
+    margin-left: 7rem;
+}
+.heading1{
+    color: black;
+    font-size:3rem;
+    font-weight: bolder;
+    margin-left: 7rem;
+    display: inline-block;
+}
+.heading2{
+    background: linear-gradient(98.84deg, #5e9e1a 43.27%, #1aae18, #225621 71.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:3rem;
+    font-weight: bolder;
+    margin-left: 1.1rem;
+    display: inline-block;
+}
+.heading2 {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #0C9400; 
+    text-align: center;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease; 
+}
+
+.heading2:hover {
+    color: #1aae18; /* Change the text color on hover */
+    text-shadow: 2px 2px 4px rgba(26, 185, 61, 0.7); /* Add a glowing text effect */
+    transform: translateX(20px) scale(1.1); /* Move  Slightly enlarge the text */
+    cursor: pointer; /* Change the cursor to a pointer */
+}
+.plastic{
+    color: black;
+    font-size:1.5rem;
+    font-weight: bolder;
+    margin-left: 15rem;
+    opacity: 0.5;
+}
+.ecycle{
+    height: 15rem;
+    margin-left: 7rem;
+}
+.login {
+    color: black;
+    height: 28rem; /* Back to original fixed height */
+    width: 30rem;
+    margin-left: 57%;
+    margin-top: -25rem;
+    background-color: rgb(246, 244, 246);
+    border-radius: 1.5rem;
+    box-shadow: 3px 3px 3px 3px rgba(5, 68, 19, 0.4);
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login h2 {
+    font-size: 1rem; /* Smaller heading size */
+    margin: 0.2rem 0; /* Less margin */
+    text-align: center;
+}
+
+.number {
+    width: 85%;
+    padding: 0.4rem; /* Less padding */
+    margin: 0.2rem 0; /* Less margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.next {
+    width: 85%;
+    height: 2.2rem; /* Slightly smaller height */
+    padding: 0.4rem;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+#otp-section {
+    width: 85%;
+    margin-top: 0.3rem;
+}
+
+.error-message, .loading, #status {
+    width: 85%;
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+}
+
+.contact {
+    width: 85%;
+    text-align: center;
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
+}
+
+.call{
+    
+    border-radius: 1rem;
+}
+ 
+ 
+.number{
+     
+    position: relative;  /* Add this */
+    z-index: 2;  
+    margin-top: 1rem;
+    margin-bottom: 1rem;    
+    width: 22rem;   /* Add this */
+    width: 90%; /* Adjust width to fit within the form */
+    padding: 0.8rem; /* Add padding inside inputs */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-size: 1rem; /* Adjust font size for better readability */
+}
+.contact{
+    color: black;
+    font-size: 1rem;
+    margin:2rem ;
+    margin-top: 1rem;
+    margin-left: 4rem;
+}
+.next{
+    background-color: #0C9400;
+    height: 3rem;
+    width: 6rem;
+    text-align: center;
+    color: white;
+    margin-top:1rem;
+    border-radius: 6px;
+    border: none;
+    position: relative;  /* Add this */
+    z-index: 2;         /* Add this */
+    width: 90%; /* Adjust button width to match input fields */
+    padding: 0.8rem; /* Add padding for better appearance */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 0.5rem; /* Add spacing above the button */
+}
+.next:hover {
+    background-color: #1aae18; /* Change the background color on hover */
+    box-shadow: 4px 4px 6px rgba(26, 185, 61, 0.7); /* Add a deeper shadow effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    cursor: pointer; /* Change the cursor to a pointer */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+call:hover{
+    box-shadow:5px 5px 5px 5px rgba(26, 185, 61, 0.5) ;
+}
+
+/*why us & how it works*/
+
+.container{
+    padding-top: 7rem;
+}
+h1{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+
+}
+/*.pickup {
+    padding: 5rem;
+    padding-right: 3rem;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+}*/
+.card1{
+    height: 262px;
+    width: 430px;
+    background-color: rgb(12, 183, 21);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+  
+    
+}
+/*.card1 p{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+}*/
+
+.card2{
+    height: 262px;
+    width: 430px;
+    background-color: rgb(12, 183, 21);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+
+}
+.card2 p{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+
+}
+.card3{
+    height: 262px;
+    width: 430px;
+    background-color: rgb(12, 183, 21);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+.card3 p{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+}
+.why-us{
+    height: 342px;
+    width: 100%;
+    color: black;
+    background-color: rgb(43, 183, 136);
+    padding-bottom: 20px;
+    margin-top: 90px;
+}
+.why-us h1{
+    color: white;
+    padding-top: 30px;
+}
+.cardss{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 25px;
+    margin-top: 50px;
+
+}
+.cardss1{
+    width: 292px;
+    height: 145px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+}
+.cardss h3 {
+    display: flex;
+    justify-content: right;
+    margin-right: 50px;
+    padding-top: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cardss2{
+    width: 292px;
+    height: 145px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+}
+.cardss3{
+    width: 292px;
+    height: 145px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+}
+.cardss4{
+    width: 292px;
+    height: 145px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+}
+
+.cardss img{
+    position: relative;
+    padding-top: 40px;
+    padding-left: 10px;
+   
+}
+.cardss1 p{
+    padding: 5px;
+}
+
+/*Animation*/
+/* Initial state for animation */
+.animate {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: all 0.8s ease-out; /* Smooth transition */
+}
+
+/* Animation when element is visible */
+.animate.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Random directions for animation */
+.animate-left {
+    transform: translateX(-50px); /* Start from the left */
+}
+
+.animate-right {
+    transform: translateX(50px); /* Start from the right */
+}
+
+.animate-up {
+    transform: translateY(-50px); /* Start from above */
+}
+
+.animate-down {
+    transform: translateY(50px); /* Start from below */
+}
+/*For Household*/
+.house{
+    margin-top: 3rem;
+    background: linear-gradient(98.84deg, #5e9e1a 43.27%, #1aae18, #225621 71.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cater{
+    margin-top: -3rem;
+    font-size: 2.3rem;
+    font-weight: 700;
+    background: linear-gradient(98.84deg, #5e9e1a 43.27%, #1aae18, #225621 71.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.household{
+    display: inline-block;
+}
+#house{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-left: 15rem;
+    margin-top: 6rem;
+}
+.safety{
+    color: black;
+    margin-left: 12rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+.househ{
+    margin-left: 45rem;
+    margin-top: -13rem;
+    height: 15rem;
+}
+#househ{
+    height: 15rem;
+    margin-left: 12rem;
+}
+#pay{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-top: -12rem;
+    margin-left:48rem;
+}
+#safety{
+    color: black;
+    margin-left:45rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+#phone-error {
+    color: red;
+    margin-left: 5rem;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    position: absolute;
+    display: none;
+}
+
+.otp-section{
+    margin:3rem ;
+}
+
+.recaptcha-container{
+
+    margin-left: 5rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: #dc3545;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 90%; /* Match width with inputs */
+}
+
+.loading {
+    text-align: center;
+    color: #0C9400;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    width: 90%; /* Match width with inputs */
+}
+
+#status {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    width: 90%; /* Match width with inputs */
+}
+
+#otp-section {
+    margin-top: 10px;
+    width: 90%; /* Ensure OTP section fits within the form */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Add spacing between OTP input and button */
+}
+
+/* Footer Styling */
+.footer {
+    background: #0C9400; /* Green background for the footer */
+    color: #fff;
+    padding: 2rem 0;
+    width: 100%;
+    bottom: 0;
+    margin-top: 5rem;
+    margin-bottom: -5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 1rem;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #f1f1f1;
+}
+
+.footer-section a {
+    color: #fff;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+/*responsive*/
+/* Responsive styles for tablets and smaller screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+
+    nav {
+        height: auto;
+        font-size: 0.9rem;
+    }
+
+    #logo {
+        height: 3rem;
+    }
+
+    .heading, .heading1, .heading2 {
+        font-size: 2rem;
+        margin-left: 1rem;
+        text-align: center;
+    }
+
+    .plastic {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .ecycle {
+        height: 10rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .login {
+        width: 90%;
+        margin: 2rem auto;
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    .number, .next {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card1, .card2, .card3 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .why-us {
+        padding: 1rem;
+    }
+
+    .cardss {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cardss1, .cardss2, .cardss3, .cardss4 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .house, .cater {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .household, #business {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #house, #pay {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .safety, #safety {
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .househ, #househ {
+        height: 10rem;
+        margin: 1rem auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 1rem 0;
+    }
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 480px) {
+    .heading, .heading1, .heading2 {
+        font-size: 1.5rem;
+    }
+
+    .plastic {
+        font-size: 0.9rem;
+    }
+
+    .login {
+        padding: 0.5rem;
+    }
+
+    .cards, .cardss {
+        gap: 0.5rem;
+    }
+
+    .card1, .card2, .card3, .cardss1, .cardss2, .cardss3, .cardss4 {
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}

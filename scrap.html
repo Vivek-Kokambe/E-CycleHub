@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap Rates</title>
+    <link rel="stylesheet" href="scrap.css">
+</head>
+<body>
+    <div class="heading1">Small Appliances</div>
+    <div class="row1">
+        <div class="rates animate animate-left">
+            <div class="logos">
+                <img src="assets/printer.png" alt="printer">
+                <div class="rate">RS 20/KG</div>
+            </div>
+            <div class="name">Printer/Scanner/FA</div>
+            <div class="name1">X Machine</div>
+        </div>
+        <div class="rates animate animate-up">
+            <div class="logos">
+                <img src="assets/Metal E-waste.jpeg" alt="printer">
+                <div class="rate">RS 28/KG</div>
+            </div>
+            <div class="name">Metal E-Waste</div>
+        </div>
+        <div class="rates animate animate-down">
+            <div class="logos">
+                <img src="assets/Plastic E-Waste.jpeg" alt="printer">
+                <div class="rate">RS 15/KG</div>
+            </div>
+            <div class="name">Plastic E-Waste</div>
+        </div>
+        <div class="rates animate animate-up">
+            <div class="logos">
+                <img src="assets/CRT TV.jpeg" alt="printer">
+                <div class="rate">RS 200/KG</div>
+            </div>
+            <div class="name">CRT TV</div>
+        </div>
+        <div class="rates animate animate-left">
+            <div class="logos">
+                <img src="assets/Ceiling Fan.jpeg" alt="printer">
+                <div class="rate">RS 35/KG</div>
+            </div>
+            <div class="name">Ceiling Fan</div>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="rates animate animate-up">
+            <div class="logos">
+                <img src="assets/Motors Copper  wiring.jpeg" alt="printer">
+                <div class="rate">RS 35/KG</div>
+            </div>
+            <div class="name">Motors (Copper</div>
+            <div class="name1">Wiring)</div>
+        </div>
+        <div class="rates animate animate-down">
+            <div class="logos">
+                <img src="assets/Microwave.jpeg" alt="printer">
+                <div class="rate">RS 350/KG</div>
+            </div>
+            <div class="name">Microwave</div>
+        </div>
+        <div class="rates animate animate-up">
+            <div class="logos">
+                <img src="assets/UPS.jpeg" alt="printer">
+                <div class="rate">RS 180/KG</div>
+            </div>
+            <div class="name">UPS</div>
+        </div>
+        <div class="rates animate animate-down">
+            <div class="logos">
+                <img src="assets/Inverter.jpeg" alt="printer">
+                <div class="rate">RS 40/KG</div>
+            </div>
+            <div class="name">Inverter/Stabilizer</div>
+            <div class="name1">(Copper Coil)</div>
+        </div>
+        <div class="rates animate animate-left">
+            <div class="logos">
+                <img src="assets/Battery.jpeg" alt="printer">
+                <div class="rate">RS 81/KG</div>
+            </div>
+            <div class="name">Battery(Used with</div>
+            <div class="name1">inverters)</div>
+        </div>
+    </div>
+    <div class="heading2">Mobiles & Computers </div>
+    <div class="row3">
+        <div class="rates animate animate-left">
+            <div class="logos">
+                <img src="assets/laptop.png" alt="printer">
+                <div class="rate">RS 300/KG</div>
+            </div>
+            <div class="name">Scrap Laptop</div>
+        </div>
+        <div class="rates animate animate-up">
+            <div class="logos">
+                <img src="assets/CRT Monitor (1).png" alt="printer">
+                <div class="rate">RS 150/KG</div>
+            </div>
+            <div class="name">CRT Monitor</div>
+        </div>
+        <div class="rates animate animate-down">
+            <div class="logos">
+                <img src="assets/CRT Monitor (1).png" alt="printer">
+                <div class="rate">RS 20/KG</div>
+            </div>
+            <div class="name">LCD Monitor</div>
+        </div>
+        <div class="rates animate animate-right">
+            <div class="logos">
+                <img src="assets/laptop.png" alt="printer">
+                <div class="rate">RS 225/KG</div>
+            </div>
+            <div class="name">Computer CPU</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const animatedElements = document.querySelectorAll(".animate");
+      
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          });
+      
+          animatedElements.forEach((el) => observer.observe(el));
+        });
+      </script>
+   
+</body>
+</html>

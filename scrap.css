@@ -1,0 +1,124 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(246, 244, 246);
+}
+.heading1{
+    font-size: xx-large;
+    padding-top: 5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    color: rgb(7, 5, 5);
+}
+.row1{
+    display: flex;
+    gap: 45px;
+}
+.row2{
+    display: flex;
+    gap: 45px;
+}
+.rates{
+    padding-top: 60px;
+    margin-left: 50px;
+}
+.logos{
+    
+    height: 110px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px 2px #0C9400;
+    
+}
+.logos img{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    padding-top: 15px;
+}
+.logos {
+    height: 110px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px 2px #0C9400;
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.logos:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 6px 8px rgba(12, 148, 0, 0.7);
+    cursor: pointer;
+}
+.rate{
+    font-size: medium;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+.name{
+    padding-top: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    color: rgb(19, 8, 8);
+}
+.name1{
+    margin-left: 35px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    color: rgb(14, 5, 5);
+}
+
+
+
+
+
+
+.heading2{
+    font-size: xx-large;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    color: rgb(21, 12, 12);
+    padding-top: 60px;
+}
+.row3{
+    display: flex;
+    gap: 45px;
+    margin-bottom: 5rem;
+}
+
+/* Initial state for animation */
+.animate {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: all 0.8s ease-out; /* Smooth transition */
+}
+
+/* Animation when element is visible */
+.animate.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Random directions for animation */
+.animate-left {
+    transform: translateX(-50px); /* Start from the left */
+}
+
+.animate-right {
+    transform: translateX(50px); /* Start from the right */
+}
+
+.animate-up {
+    transform: translateY(-50px); /* Start from above */
+}
+
+.animate-down {
+    transform: translateY(50px); /* Start from below */
+}
+
+
+

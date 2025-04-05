@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <title>Schedule a Pickup</title>
+    <link rel="stylesheet" href="pickup.css">
+
+    <!-- Add Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAj_lPROgfdDWn4AgQC7KQfHyHrZoqGiHM",
+            authDomain: "ecyclehub-194af.firebaseapp.com",
+            projectId: "ecyclehub-194af",
+            storageBucket: "ecyclehub-194af",
+            messagingSenderId: "697442372170",
+            appId: "1:697442372170:web:c185b21d8c88ae682cb4b3",
+            measurementId: "G-GFFYFPKJ5Y"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+</head>
+<body>
+    <div class="diksha2">
+        <h1 class="enter">Enter Your Details</h1>
+
+        <div id="pickup-container">
+            <div class="diksha">
+                
+                <h1>Name</h1>
+                <input type="text" placeholder="Enter your name" id="name">
+                <h1>Phone</h1>
+                <input type="tel" placeholder="Enter your phone number" id="phone" required>
+                <h1>Select an Address</h1>
+                <input type="text" placeholder="Enter your address" id="address">          
+                <h1>Remarks (Optional)</h1>
+                <input type="text" placeholder="Additional notes" id="remark">
+                
+                
+            </div>
+            
+            <div class="pickup"> 
+                <h1 >Email</h1>
+                <input type="email" placeholder="Enter your email" id="email">
+                
+                <h1>Enter Date</h1>
+                <input type="date" id="date" min="" max="">
+                
+                <h1>Estimated Weight</h1>
+                <input type="text" placeholder="Select Weight in Kg" id="weight">
+            </div>
+        </div>
+        
+        
+        <button id="pickup-btn" class="pick">Schedule A Pickup</button>
+        <p class="click"><i>To view the scheduled pickups, click Check My Pickups</i></p>
+        
+    </div>
+    <img src="please.jpg" alt="">
+    <!-- EmailJS & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("J7vHs2VDnF9a3ADXd"); // Replace with your EmailJS Public Key
+        })();
+
+        // Set Date Range (Current Month Only)
+        document.addEventListener("DOMContentLoaded", function() {
+            let today = new Date();
+            let firstDay = new Date(today.getFullYear(), today.getMonth(), 1).toISOString().split("T")[0];
+            let lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).toISOString().split("T")[0];
+
+            document.getElementById("date").setAttribute("min", firstDay);
+            document.getElementById("date").setAttribute("max", lastDay);
+        });
+
+        // Single event listener for form submission
+        document.getElementById("pickup-btn").addEventListener("click", async function() {
+            // Get form values
+            const userName = document.getElementById("name").value;
+            const userEmail = document.getElementById("email").value;
+            const pickupDate = document.getElementById("date").value;
+            const pickupAddress = document.getElementById("address").value;
+            const pickupWeight = document.getElementById("weight").value;
+            const pickupRemark = document.getElementById("remark").value;
+            const userPhone = document.getElementById("phone").value;
+
+            // Validate required fields
+            if (!userName || !userEmail || !pickupDate || !pickupAddress || !userPhone) {
+                alert("⚠️ Please fill in all required fields.");
+                return;
+            }
+
+            try {
+                // Generate pickup ID
+                const pickupID = `PU-${Date.now()}`;
+
+                // Save to Firestore
+                await db.collection("pickups").doc(pickupID).set({
+                    pickupID,
+                    userName,
+                    userEmail,
+                    userPhone,
+                    pickupDate,
+                    pickupAddress,
+                    pickupWeight,
+                    pickupRemark,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                // Send email
+                await emailjs.send("service_tly5hjo", "template_j3a9bnh", {
+                    to_email: userEmail,
+                    user_name: userName,
+                    pickup_date: pickupDate,
+                    pickup_time: "10 AM - 6 PM",
+                    pickup_address: pickupAddress
+                });
+
+                alert("✅ Pickup scheduled successfully!");
+                window.location.href = 'loggedIndex.html'; // Redirect after success
+                
+            } catch (error) {
+                console.error("Error:", error);
+                alert("⚠️ Error scheduling pickup. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

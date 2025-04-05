@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Pickup Details</title>
+    <link rel="stylesheet" href="checkDetails.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Pickup History</h1>
+        <div class="search-container">
+            <input type="text" id="phone-search" placeholder="Enter your phone number">
+            <button onclick="searchPickups()">Search</button>
+        </div>
+        
+        <div id="pickups-container"></div>
+    </div>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAj_lPROgfdDWn4AgQC7KQfHyHrZoqGiHM",
+            authDomain: "ecyclehub-194af.firebaseapp.com",
+            projectId: "ecyclehub-194af",
+            storageBucket: "ecyclehub-194af",
+            messagingSenderId: "697442372170",
+            appId: "1:697442372170:web:c185b21d8c88ae682cb4b3",
+            measurementId: "G-GFFYFPKJ5Y"
+        };
+
+        // Initialize Firebase and Firestore
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        async function searchPickups() {
+            const phoneNumber = document.getElementById('phone-search').value;
+            const pickupsContainer = document.getElementById('pickups-container');
+            pickupsContainer.innerHTML = '<p>Searching...</p>';
+
+            if (!phoneNumber) {
+                alert('Please enter your phone number');
+                return;
+            }
+
+            try {
+                // Get pickups without orderBy (fixing potential index error)
+                const querySnapshot = await db.collection('pickups')
+                    .where('userPhone', '==', phoneNumber)
+                    .get();
+
+                console.log("Query executed", querySnapshot.size); // Debug log
+
+                if (querySnapshot.empty) {
+                    pickupsContainer.innerHTML = '<p class="no-results">No pickups found for this number</p>';
+                    return;
+                }
+
+                // Clear container and add results
+                pickupsContainer.innerHTML = '';
+                
+                // Sort documents by timestamp client-side
+                const docs = [];
+                querySnapshot.forEach(doc => docs.push(doc.data()));
+                docs.sort((a, b) => b.timestamp - a.timestamp);
+
+                docs.forEach((data) => {
+                    console.log("Processing pickup:", data); // Debug log
+                    const pickupCard = `
+                        <div class="pickup-card">
+                            <div class="pickup-header">
+                                <h3>Pickup ID: ${data.pickupID || 'N/A'}</h3>
+                                <span class="date">${data.pickupDate || 'N/A'}</span>
+                            </div>
+                            <div class="pickup-details">
+                                <p><strong>Name:</strong> ${data.userName || 'N/A'}</p>
+                                <p><strong>Phone:</strong> ${data.userPhone || 'N/A'}</p>
+                                <p><strong>Address:</strong> ${data.pickupAddress || 'N/A'}</p>
+                                <p><strong>Weight:</strong> ${data.pickupWeight ? data.pickupWeight + ' Kg' : 'N/A'}</p>
+                                <p><strong>Status:</strong> Scheduled</p>
+                                ${data.pickupRemark ? `<p><strong>Remarks:</strong> ${data.pickupRemark}</p>` : ''}
+                            </div>
+                        </div>
+                    `;
+                    pickupsContainer.innerHTML += pickupCard;
+                });
+            } catch (error) {
+                console.error("Error details:", error); // Detailed error log
+                pickupsContainer.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

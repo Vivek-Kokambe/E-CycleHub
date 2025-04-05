@@ -1,0 +1,114 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10rem;
+    overflow: scroll;
+    background-color: rgb(255, 255, 255) ;
+}
+.enter{
+    background: linear-gradient(98.84deg, #5e9e1a 43.27%, #1aae18, #225621 71.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:3rem;
+    font-weight: bolder;
+    margin-left: 18rem;
+    display: inline-block;
+
+   /* font-size: 3rem;
+    font-weight: 600;
+    margin-left: 18rem;*/
+}
+#pickup-container{
+    display: flex;
+    padding: 0.5rem;
+}
+.diksha{
+    width: 50%;
+    border-radius: 1 rem;
+    margin-left: 10rem;
+    margin-right: 0.5rem ;
+    margin-top: -0.5rem;
+}
+.pickup{
+    width: 2cap;
+    flex: 1;
+    border-radius: 1 rem;
+    overflow: auto;
+    margin-top: -0.5rem;
+    margin-left: -5rem;
+}
+/*.enter{
+    margin-top: 3rem;
+    background: linear-gradient(98.84deg, #5e9e1a 43.27%, #1aae18, #225621 71.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 3rem;
+    font-weight: 600;
+    margin-left: 18rem;
+}*/
+h1{
+    font-size: 1.5rem;
+}
+#name{
+    height: 2rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+#mail{
+    height: 3rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+#date{
+    display: block
+}
+.date{
+    height: 2rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+#time{
+    height: 2rem;
+    align-items: center;
+    border-radius: 0.3rem;
+    width: 10.7rem;
+}
+#address{
+    height: 2rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+#weight{
+    height: 2rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+.pick{
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 37.5%;
+    height: 3rem;
+    width: 8rem;
+    align-items: center;
+    border-radius: 0.3rem;
+    background-color: #0C9400;
+    box-shadow:2px 2px 2px 2px rgba(26, 185, 61, 0.5) ;
+    color: white;
+    border: none;
+
+}
+.pick:hover {
+    background-color: #1aae18; /* Change the background color on hover */
+    box-shadow: 4px 4px 6px rgba(26, 185, 61, 0.7); /* Add a deeper shadow effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    cursor: pointer; /* Change the cursor to a pointer */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+}
+.click{
+    margin-left: 27%;
+}
+img{
+    margin-left: 27.5%;
+    height: 20rem;
+    margin-bottom: 2rem;
+}
